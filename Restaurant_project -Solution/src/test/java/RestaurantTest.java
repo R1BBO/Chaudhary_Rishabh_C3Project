@@ -34,9 +34,21 @@ class RestaurantTest {
         boolean isOpen = restaurant.isRestaurantOpen(T);
         assertEquals(false, isOpen);
     }
-
     //<<<<<<<<<<<<<<<<<<<<<<<<<OPEN/CLOSED>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+
+    //<<<<<<<<<<<<<<<<<<<<<<<<<Total Calculation>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    @Test
+    public void calculate_total_item_value()
+    {
+      
+      restaurant.addToMenu("Sweet corn soup",119);
+       restaurant.addToMenu("Vegetable lasagne", 269);
+        int price  = restaurant.CalculateTotalPrice();
+        assertEquals(388, price);
+    }
+
+    //<<<<<<<<<<<<<<<<<<<<<<<<<Total Calculation>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
     //>>>>>>>>>>>>>>>>>>>>>>>>>>>MENU<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     @Test

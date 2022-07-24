@@ -8,7 +8,8 @@ public class Restaurant {
     private String location;
     public LocalTime openingTime;
     public LocalTime closingTime;
-    private List<Item> menu = new ArrayList<Item>();
+    public List<Item> menu = new ArrayList<Item>();
+    private List<Integer> prices = new ArrayList<Integer>();
 
     public Restaurant(String name, String location, LocalTime openingTime, LocalTime closingTime) {
         this.name = name;
@@ -53,6 +54,7 @@ public class Restaurant {
     public void addToMenu(String name, int price) {
         Item newItem = new Item(name,price);
         menu.add(newItem);
+        prices.add(price);
     }
     
     public void removeFromMenu(String itemName) throws itemNotFoundException {
@@ -74,6 +76,17 @@ public class Restaurant {
 
     public String getName() {
         return name;
+    }
+
+    public  int  CalculateTotalPrice()
+    {
+        
+        int totalValue = 0;
+       for(int i=0;i<prices.size();i++)
+       {
+         totalValue =+ prices.get(i);
+       }
+        return totalValue;
     }
 
 }
