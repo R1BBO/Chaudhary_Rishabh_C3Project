@@ -84,7 +84,7 @@ public class Restaurant {
         int totalValue = 0;
        for(int i=0;i<prices.size();i++)
        {
-         totalValue =+ prices.get(i);
+         totalValue += prices.get(i);
        }
         return totalValue;
     }
